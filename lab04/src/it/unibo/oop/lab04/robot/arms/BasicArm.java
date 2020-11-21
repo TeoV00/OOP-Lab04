@@ -1,8 +1,8 @@
 package it.unibo.oop.lab04.robot.arms;
 
 public class BasicArm {
-    private final static double consuptionPickUp = 2.0;
-    private final static double consuptionDropDown = 2.0;
+    public static final double CONSUPTION_PICKUP = 0.5;
+    public static final double CONSUPTION_DROPDOWN = 0.5;
     
     private final String name;
     private boolean isGrabbing;
@@ -29,15 +29,15 @@ public class BasicArm {
     }
 
     public double getConsuptionPickUp() {
-        return consuptionPickUp;
+        return CONSUPTION_PICKUP;
     }
 
     public double getConsuptionDropDown() {
-        return consuptionDropDown;
+        return CONSUPTION_DROPDOWN;
     }
 
     public String toString() {
-        return "BasicArm [name=" + name + ", isGrabbing=" + isGrabbing + ", isGrabbing()=" + isGrabbing() + "]";
+        return "BasicArm [name=" + name + ", isGrabbing()=" + isGrabbing() + "]";
     }
 
   

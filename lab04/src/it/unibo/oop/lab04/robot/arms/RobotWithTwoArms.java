@@ -4,11 +4,11 @@ import it.unibo.oop.lab04.robot.base.BaseRobot;
 
 public class RobotWithTwoArms extends BaseRobot implements RobotWithArms {
 
-    private BasicArm leftArm;
+    private final BasicArm leftArm;
     private BasicArm rightArm;
     private int countItem;
     
-    public RobotWithTwoArms(String robotName) {
+    public RobotWithTwoArms(final String robotName) {
         super(robotName);
         this.countItem = 0;
         this.leftArm = new BasicArm("leftArm");
@@ -40,11 +40,13 @@ public class RobotWithTwoArms extends BaseRobot implements RobotWithArms {
     }
 
     private void decrementCountItem() {
-        this.countItem -= 1;        
+        this.countItem -= 1;
+        this.consumeBattery(BasicArm.CONSUPTION_DROPDOWN);
     }
 
     private void incrementCountItem() {
         this.countItem += 1;
+        this.consumeBattery(BasicArm.CONSUPTION_PICKUP);
     }
     
     public int getCarriedItemsCount() {
